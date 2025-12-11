@@ -65,7 +65,7 @@ void WavePropagationNode_UpdateNeighbours(){
 }
 
 void Setup(AlxWindow* w){
-	tv = TransformedView_New((Vec2){ GetHeight(),GetWidth() });
+	tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
 
 	nodes = (WavePropagationNode*)malloc(sizeof(WavePropagationNode) * MAP_WIDTH * MAP_HEIGHT);
 	for(int i = 0;i<MAP_HEIGHT;i++){
@@ -78,7 +78,7 @@ void Setup(AlxWindow* w){
 	end = NULL;
 }
 void Update(AlxWindow* w){
-	TransformedView_Output(&tv,(Vec2){ GetHeight(),GetWidth() });
+	TransformedView_Output(&tv,(Vec2){ GetWidth(),GetHeight() });
 	TransformedView_HandlePanZoom(&tv,window.Strokes,GetMouse());
 	Rect r = TransformedView_Rect(&tv,GetScreenRect());
 
