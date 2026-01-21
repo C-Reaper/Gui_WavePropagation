@@ -80,7 +80,7 @@ void Setup(AlxWindow* w){
 void Update(AlxWindow* w){
 	TransformedView_Output(&tv,(Vec2){ GetWidth(),GetHeight() });
 	TransformedView_HandlePanZoom(&tv,window.Strokes,GetMouse());
-	Rect r = TransformedView_Rect(&tv,GetScreenRect());
+	Rect r = TransformedView_ScreenWorldRect(&tv,GetScreenRect());
 
 	if(Stroke(ALX_MOUSE_L).PRESSED){
 		Vec2 m = TransformedView_ScreenWorldPos(&tv,GetMouse());
